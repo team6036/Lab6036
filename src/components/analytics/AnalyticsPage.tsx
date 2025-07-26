@@ -165,7 +165,7 @@ export default function AnalyticsPage() {
             );
           })
           .map((profile, index) => (
-            <HoursEntry key={profile.user} entry={{ index, profile }} />
+            <HoursEntry key={profile.user} index={index} profile={profile} />
           ))}
       </div>
     </motion.div>

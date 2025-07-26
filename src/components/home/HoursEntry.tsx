@@ -1,20 +1,19 @@
 import { FaCrown } from "react-icons/fa6";
 import { selectHomeSortBy, selectHomeSortDir } from "../../store/slice";
 import { useAppSelector } from "../../store/store";
-import type { DisplayEntry } from "../../types";
 import { dangerScale, getCycleIndex, HOUR_QUOTA, rgbToHex } from "../../util";
+import type { UserProfile } from "../../types";
 
 function fix(n: number) {
   return Math.round(n * 1e1) / 1e1;
 }
 
 export interface HoursEntryProps {
-  entry: DisplayEntry;
+  index: number;
+  profile: UserProfile;
 }
 
-export default function HoursEntry({
-  entry: { index, profile },
-}: HoursEntryProps) {
+export default function HoursEntry({ index, profile }: HoursEntryProps) {
   const cycleIndex = getCycleIndex();
 
   const total = profile.cycles[cycleIndex]?.total ?? 0;

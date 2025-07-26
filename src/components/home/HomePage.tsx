@@ -103,7 +103,7 @@ export default function HomePage() {
             return (hoursSort || nameSort) * sortFlip;
           })
           .map((profile, index) => (
-            <HoursEntry key={profile.user} entry={{ index, profile }} />
+            <HoursEntry key={profile.user} index={index} profile={profile} />
           ))}
       </div>
       <div className="h-full flex flex-col items-start justify-start gap-4">

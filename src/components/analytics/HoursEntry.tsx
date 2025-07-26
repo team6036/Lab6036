@@ -3,7 +3,7 @@ import {
   selectAnalyticsSortDir,
 } from "../../store/slice";
 import { useAppSelector } from "../../store/store";
-import type { DisplayEntry } from "../../types";
+import type { UserProfile } from "../../types";
 import {
   dangerScale,
   getCycleIndex,
@@ -19,12 +19,11 @@ function fix(n: number) {
 }
 
 export interface HoursEntryProps {
-  entry: DisplayEntry;
+  index: number;
+  profile: UserProfile;
 }
 
-export default function HoursEntry({
-  entry: { index, profile },
-}: HoursEntryProps) {
+export default function HoursEntry({ index, profile }: HoursEntryProps) {
   const cycleIndex = getCycleIndex();
   const cycleWeekIndex = getCycleWeekIndex();
 
