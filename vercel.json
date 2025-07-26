@@ -1,22 +1,4 @@
 {
-  "routes": [
-    {
-      "src": "/api/auth",
-      "dest": "/api/auth.js"
-    },
-    {
-      "src": "/api/data",
-      "dest": "/api/data.js"
-    },
-    {
-      "src": "/api/signin",
-      "dest": "/api/signin.js"
-    },
-    {
-      "src": "/api/signout",
-      "dest": "/api/signout.js"
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
