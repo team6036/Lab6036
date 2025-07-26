@@ -42,7 +42,9 @@ export default function AuthWrapper({
       {...props}
     >
       <AnimatePresence>
-        {!granted && <AuthComponent key="auth-component" type={type} />}
+        {!granted && (
+          <AuthComponent key="auth-component" type={type} debounce={debounce} />
+        )}
         {children}
       </AnimatePresence>
     </div>

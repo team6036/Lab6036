@@ -8,9 +8,10 @@ import useTryAuth from "../hooks/useTryAuth";
 
 export interface AuthComponentProps {
   type: "user" | "admin";
+  debounce: number;
 }
 
-export default function AuthComponent({ type }: AuthComponentProps) {
+export default function AuthComponent({ type, debounce }: AuthComponentProps) {
   const dispatch = useAppDispatch();
 
   const password = useAppSelector(selectPassword);
@@ -24,7 +25,7 @@ export default function AuthComponent({ type }: AuthComponentProps) {
     setAuthErrorPassword(password);
   }, [type, authError]);
 
-  const tryAuth = useTryAuth(type);
+  const tryAuth = useTryAuth(type, debounce);
 
   return (
     <motion.div
